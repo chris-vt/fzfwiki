@@ -17,24 +17,24 @@ FZF WIKI requires Neovim, Zsh and Fzf (3.8 or above); however the script can be 
 1. Clone the repo on your machine
 2. Run the Make script with the command:
 
-''' 
+``` bash 
 make install WIKIDIR=<wiki_directory> SCRIPTDIR=<install_directory
-'''
+```
 
 where WIKIDIR is the directory where you want to save the wiki collection of notes; SCRIPTDIR is folder where you wish to save your the script.
 Note that the during the installation the script is modified to point towards the WIKIDIR, so when you launch the script FZF WIKI knows where your notes are.
 
 Since the script works with Zsh, you will need to source the script during the Zsh initialisation, this can be done by adding this line in your *zshrc* file:
 
-'''
+``` bash
 source /path/to/script
-'''
+```
 
 I also like to set up a key binding for the script, this could be done by adding this line in your *zshrc* file:
 
-'''
+``` bash
 bindkey '^[[15~' wiki		#this adds a key binding to <F5> 
-'''
+```
 
 ## Usage
 When FZF WIKI is launched you will find an Fzf interface listing the content of your WIKIDIR with preview. 
