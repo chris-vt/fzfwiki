@@ -1,0 +1,27 @@
+#!/bin/sh
+
+wiki() {
+    WIKIDIR=/script_path
+    ORIGIN="$PWD"  
+
+    cd "$WIKIDIRabc
+    fzf --ansi --disabled --layout=reverse \
+        --color="fg+:red,query:blue" \
+        --header 'New note: type title and CTRL-w'\
+        --bind 'start:reload:grep -rl --exclude-dir=.git {q}  | sort || true' \
+        --bind 'change:reload:sleep 0.1; grep -rl --exclude-dir=.git {q}  |sort  || true'\
+        --preview 'batcat --color=always --style=numbers {}' \
+        --preview-window '75%,right,border-left'\
+        --bind 'enter:execute(vim {})'\
+        --bind 'ctrl-w:execute:( title={q}; filename=$(echo "$title" | tr " " "_").md; \
+        target="$PWD/$filename"; \
+        front="---\n\ttitle: \""$title"\"\n\ttags:\n---\n\n#  "; \
+        echo "$front" > "$target"; vim "$target" "+call cursor(7,3)")'\
+        --bind 'ctrl-w:+clear-query' 
+    cd "$ORIGIN"
+}
+
+zle -N wiki
+
+# option to use date in the front matter
+# front="---\n\ttitle: ""$title""\n\tdate: $(date +%d-%m-%Y)\n\ttags:\n---\n\n#  "; \
