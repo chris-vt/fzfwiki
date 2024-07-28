@@ -16,7 +16,7 @@ FZF WIKI requires Neovim, Zsh and Fzf (3.8 or above); however the script can be 
 ### Installation
 1. Clone the repo on your machine
 2. Run the Make script with the command:
-''' bash
+'''
 make install WIKIDIR=<wiki_directory> SCRIPTDIR=<install_directory
 '''
 where WIKIDIR is the directory where you want to save the wiki collection of notes; SCRIPTDIR is folder where you wish to save your the script.
