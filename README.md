@@ -17,7 +17,7 @@ FZF WIKI requires Neovim, Zsh and Fzf (3.8 or above); however the script can be 
 1. Clone the repo on your machine
 2. Run the Make script with the command:
 
-''' bash
+''' 
 make install WIKIDIR=<wiki_directory> SCRIPTDIR=<install_directory
 '''
 
@@ -26,13 +26,13 @@ Note that the during the installation the script is modified to point towards th
 
 Since the script works with Zsh, you will need to source the script during the Zsh initialisation, this can be done by adding this line in your *zshrc* file:
 
-''' bash
+'''
 source /path/to/script
 '''
 
 I also like to set up a key binding for the script, this could be done by adding this line in your *zshrc* file:
 
-''' bash
+'''
 bindkey '^[[15~' wiki		#this adds a key binding to <F5> 
 '''
 
